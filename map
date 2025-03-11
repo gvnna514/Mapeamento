@@ -1,0 +1,21 @@
+// Verifica se há uma imagem de fundo salva ao carregar a página
+window.onload = function() {
+    var savedBackground = localStorage.getItem("backgroundImage");
+    if (savedBackground) {
+        document.body.style.backgroundImage = "url('" + savedBackground + "')";
+    }
+}
+
+// Função para voltar à página anterior
+function goBack() {
+    window.history.back();
+}
+
+// Função para recarregar a página mantendo a imagem de fundo
+function reloadPage() {
+    var currentBackground = localStorage.getItem("backgroundImage");
+    location.reload();
+    if (currentBackground) {
+        document.body.style.backgroundImage = "url('" + currentBackground + "')";
+    }
+}
